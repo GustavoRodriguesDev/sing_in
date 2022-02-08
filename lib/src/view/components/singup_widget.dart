@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sing_in/src/routes/routes.dart';
 
 class SignUp extends StatelessWidget {
   final double fontSize;
@@ -15,7 +16,9 @@ class SignUp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).pushNamed(REGISTER);
+      },
       child: Text(
         'Sing Up',
         style: TextStyle(

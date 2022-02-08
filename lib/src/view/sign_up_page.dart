@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sing_in/src/routes/routes.dart';
 import 'package:sing_in/src/view/components/singin_widget.dart';
 import 'package:sing_in/src/view/components/singup_widget.dart';
+import 'package:sing_in/src/view/login_page.dart';
 import 'components/botton_circle.dart';
 import 'components/check_box_widget.dart';
 import 'components/textfild_widget.dart';
@@ -117,7 +119,11 @@ class _SignUpPageState extends State<SignUpPage> {
                                 )
                               ],
                             ),
-                            const BottonCircle(),
+                            BottonCircle(
+                              navigation: () {
+                                Navigator.of(context).pushNamed(LOGIN);
+                              },
+                            ),
                           ],
                         ),
                       )

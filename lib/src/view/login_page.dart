@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sing_in/src/routes/routes.dart';
 import 'package:sing_in/src/view/components/botton_circle.dart';
 import 'package:sing_in/src/view/components/check_box_widget.dart';
 import 'package:sing_in/src/view/components/singin_widget.dart';
@@ -106,7 +107,11 @@ class _LoginPageState extends State<LoginPage> {
                                 )
                               ],
                             ),
-                            const BottonCircle(),
+                            BottonCircle(
+                              navigation: () {
+                                Navigator.of(context).pushNamed(NEXT);
+                              },
+                            ),
                           ],
                         ),
                       )

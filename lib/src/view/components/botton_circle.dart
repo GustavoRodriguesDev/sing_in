@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class BottonCircle extends StatelessWidget {
-  const BottonCircle({Key? key}) : super(key: key);
+  final navigation;
+  const BottonCircle({required this.navigation, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: navigation,
       child: Container(
         height: 60,
         width: 60,

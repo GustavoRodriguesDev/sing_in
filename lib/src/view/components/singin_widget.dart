@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sing_in/src/routes/routes.dart';
 
 class SingIn extends StatelessWidget {
   final double fontSize;
@@ -14,7 +15,9 @@ class SingIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.of(context).pushNamed(LOGIN);
+      },
       child: Text(
         'Sign In',
         style: TextStyle(
