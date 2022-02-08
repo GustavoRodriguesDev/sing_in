@@ -44,22 +44,23 @@ class _NextPage extends State<NextPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      IconButton(
+                        onPressed: () {
+                          Navigator.of(context).pushNamed(LOGIN);
+                        },
+                        icon: const Icon(
+                          Icons.arrow_back,
+                          size: 50,
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 100,
+                      ),
                       const Text(
                         'Logado',
                         style: TextStyle(
                             fontSize: 30, fontWeight: FontWeight.bold),
                       ),
-                      const Spacer(),
-                      GestureDetector(
-                        onTap: () {
-                          Navigator.of(context).pushNamed(LOGIN);
-                        },
-                        child: const Text(
-                          'Retornar para tela de login',
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                      )
                     ],
                   ),
                 ),
