@@ -46,7 +46,7 @@ class _NextPage extends State<NextPage> {
                     children: [
                       IconButton(
                         onPressed: () {
-                          Navigator.of(context).pushNamed(LOGIN);
+                          Navigator.of(context).pushNamed(login);
                         },
                         icon: const Icon(
                           Icons.arrow_back,
