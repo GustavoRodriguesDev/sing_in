@@ -15,6 +15,8 @@ class SignUpPage extends StatefulWidget {
 }
 
 class _SignUpPageState extends State<SignUpPage> {
+  final _formkey = GlobalKey<FormState>();
+  bool check = false;
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -56,42 +58,62 @@ class _SignUpPageState extends State<SignUpPage> {
                         style: TextStyle(
                             fontSize: 30, fontWeight: FontWeight.bold),
                       ),
-                      const WidgetTextFild(
-                        type: 'Name',
-                      ),
-                      const WidgetTextFild(
-                        type: 'E-mail',
-                      ),
-                      const WidgetTextFild(
-                        type: 'Password',
-                      ),
-                      Row(
-                        children: [
-                          const WidgetCheckBox(),
-                          const Text(
-                            'I agree to the ',
-                            style: TextStyle(fontSize: 13),
-                          ),
-                          GestureDetector(
-                            onTap: () {},
-                            child: const Text(
-                              'Terms of Service ',
-                              style: TextStyle(
-                                  color: Colors.blueGrey, fontSize: 13),
+                      Form(
+                        key: _formkey,
+                        child: Column(
+                          children: [
+                            WidgetTextField(
+                              message: 'Digite seu Nome Completo',
+                              type: 'Name',
                             ),
-                          ),
-                          const Text('and ',
-                              style: TextStyle(
-                                  color: Colors.blueGrey, fontSize: 13)),
-                          GestureDetector(
-                            onTap: () {},
-                            child: const Text(
-                              'Privacy Policy',
-                              style: TextStyle(
-                                  color: Colors.blueGrey, fontSize: 13),
+                            WidgetTextField(
+                              message: 'Digite um e-mail valido',
+                              type: 'E-mail',
+                              validator: '@',
                             ),
-                          ),
-                        ],
+                            WidgetTextField(
+                              message: 'Digite uma senha',
+                              type: 'Password',
+                            ),
+                            const SizedBox(height: 20),
+                            Row(
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    check = !check;
+                                    setState(() {});
+                                  },
+                                  child: WidgetCheckBox(
+                                    check: check,
+                                  ),
+                                ),
+                                const Text(
+                                  'I agree to the ',
+                                  style: TextStyle(fontSize: 13),
+                                ),
+                                GestureDetector(
+                                  onTap: () {},
+                                  child: const Text(
+                                    'Terms of Service ',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey, fontSize: 13),
+                                  ),
+                                ),
+                                const Text('and ',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey, fontSize: 13)),
+                                GestureDetector(
+                                  onTap: () {},
+                                  child: const Text(
+                                    'Privacy Policy',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey, fontSize: 13),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 130,
@@ -121,7 +143,10 @@ class _SignUpPageState extends State<SignUpPage> {
                             ),
                             BottonCircle(
                               navigation: () {
-                                Navigator.of(context).pushNamed(LOGIN);
+                                if (_formkey.currentState!.validate() &&
+                                    check == true) {
+                                  Navigator.of(context).pushNamed(LOGIN);
+                                }
                               },
                             ),
                           ],

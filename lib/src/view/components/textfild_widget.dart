@@ -1,13 +1,29 @@
 import 'package:flutter/material.dart';
 
-class WidgetTextFild extends StatelessWidget {
+class WidgetTextField extends StatelessWidget {
   final String type;
-  const WidgetTextFild({required this.type, key}) : super(key: key);
+
+  final String message;
+  String? validator;
+  WidgetTextField({
+    this.validator = '',
+    required this.message,
+    required this.type,
+    key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      decoration: InputDecoration(label: Text(type)),
+    return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty || !value.contains('$validator')) {
+          return message;
+        }
+        return null;
+      },
+      decoration: InputDecoration(
+        label: Text(type),
+      ),
     );
   }
 }

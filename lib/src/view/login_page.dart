@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:sing_in/src/routes/routes.dart';
 import 'package:sing_in/src/view/components/botton_circle.dart';
 import 'package:sing_in/src/view/components/check_box_widget.dart';
@@ -14,6 +15,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _formkey = GlobalKey<FormState>();
+  bool check = false;
+
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.of(context).size.height;
@@ -55,31 +59,49 @@ class _LoginPageState extends State<LoginPage> {
                         style: TextStyle(
                             fontSize: 30, fontWeight: FontWeight.bold),
                       ),
-                      const WidgetTextFild(
-                        type: 'E-mail',
-                      ),
-                      const WidgetTextFild(
-                        type: 'Password',
-                      ),
-                      Row(
-                        children: [
-                          const WidgetCheckBox(),
-                          const Text(
-                            'Remember me ',
-                            style: TextStyle(fontSize: 13),
-                          ),
-                          const Spacer(),
-                          GestureDetector(
-                            onTap: () {},
-                            child: const Text(
-                              'Forgot password?',
-                              style: TextStyle(
-                                  color: Colors.blueGrey,
-                                  fontSize: 13,
-                                  decoration: TextDecoration.underline),
+                      Form(
+                        key: _formkey,
+                        child: Column(
+                          children: [
+                            WidgetTextField(
+                              validator: '@',
+                              type: 'E-mail',
+                              message: 'Digite um e-mail valido',
                             ),
-                          ),
-                        ],
+                            WidgetTextField(
+                              message: 'Digite sua senha',
+                              type: 'Password',
+                            ),
+                            const SizedBox(height: 20),
+                            Row(
+                              children: [
+                                GestureDetector(
+                                    onTap: () {
+                                      check = !check;
+                                      setState(() {});
+                                    },
+                                    child: WidgetCheckBox(
+                                      check: check,
+                                    )),
+                                const Text(
+                                  'Remember me ',
+                                  style: TextStyle(fontSize: 13),
+                                ),
+                                const Spacer(),
+                                GestureDetector(
+                                  onTap: () {},
+                                  child: const Text(
+                                    'Forgot password?',
+                                    style: TextStyle(
+                                        color: Colors.blueGrey,
+                                        fontSize: 13,
+                                        decoration: TextDecoration.underline),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                       SizedBox(
                         height: 130,
@@ -109,7 +131,9 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             BottonCircle(
                               navigation: () {
-                                Navigator.of(context).pushNamed(NEXT);
+                                if (_formkey.currentState!.validate()) {
+                                  Navigator.of(context).pushNamed(NEXT);
+                                }
                               },
                             ),
                           ],
