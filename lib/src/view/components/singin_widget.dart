@@ -5,8 +5,10 @@ class SingIn extends StatelessWidget {
   final double fontSize;
   final TextDecoration underline;
   final FontWeight bold;
+  final navigation;
   const SingIn(
-      {required this.underline,
+      {required this.navigation,
+      required this.underline,
       required this.bold,
       required this.fontSize,
       Key? key})
@@ -15,9 +17,7 @@ class SingIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {
-        Navigator.of(context).pushNamed(LOGIN);
-      },
+      onTap: navigation,
       child: Text(
         'Sign In',
         style: TextStyle(

@@ -17,7 +17,7 @@ class SignUp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.of(context).pushNamed(REGISTER);
+        Navigator.of(context).pushReplacementNamed(REGISTER);
       },
       child: Text(
         'Sing Up',

@@ -29,7 +29,8 @@ class _WidgetCheckBoxState extends State<WidgetCheckBox> {
               shape: BoxShape.circle,
               color: Color(0xFFEAEAEA),
             ),
-            child: Container(
+            child: AnimatedContainer(
+              duration: Duration(milliseconds: 150),
               height: 11,
               width: 11,
               decoration: BoxDecoration(
