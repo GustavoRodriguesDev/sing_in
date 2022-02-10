@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sing_in/src/routes/routes.dart';
 import 'package:sing_in/src/view/components/botton_circle.dart';
 import 'package:sing_in/src/view/components/check_box_widget.dart';
+import 'package:sing_in/src/view/components/logo.dart';
 import 'package:sing_in/src/view/components/singin_widget.dart';
 import 'package:sing_in/src/view/components/singup_widget.dart';
 import 'package:sing_in/src/view/components/textfild_widget.dart';
@@ -30,16 +31,7 @@ class _LoginPageState extends State<LoginPage> {
           color: const Color(0xFF1E1E1E),
           child: Stack(
             children: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: Image.asset(
-                    'assets/logo/ftean.png',
-                    height: 200,
-                  ),
-                ),
-              ),
+              const LogoFtean(),
               const SizedBox(
                 height: 40,
               ),

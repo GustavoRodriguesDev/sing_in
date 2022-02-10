@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sing_in/src/routes/routes.dart';
+import 'package:sing_in/src/view/components/logo.dart';
 import 'package:sing_in/src/view/components/singin_widget.dart';
 import 'package:sing_in/src/view/components/singup_widget.dart';
 import 'package:sing_in/src/view/components/text_checkbox_register.dart';
@@ -30,16 +31,7 @@ class _SignUpPageState extends State<SignUpPage> {
           color: const Color(0xFF1E1E1E),
           child: Stack(
             children: [
-              Align(
-                alignment: Alignment.topCenter,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 20),
-                  child: Image.asset(
-                    'assets/logo/ftean.png',
-                    height: 200,
-                  ),
-                ),
-              ),
+              LogoFtean(),
               const SizedBox(
                 height: 40,
               ),
@@ -71,16 +63,16 @@ class _SignUpPageState extends State<SignUpPage> {
                             key: _formkey,
                             child: Column(
                               children: [
-                                WidgetTextField(
+                                const WidgetTextField(
                                   message: 'Digite seu Nome Completo',
                                   type: 'Name',
                                 ),
-                                WidgetTextField(
+                                const WidgetTextField(
                                   message: 'Digite um e-mail valido',
                                   type: 'E-mail',
                                   validator: '@',
                                 ),
-                                WidgetTextField(
+                                const WidgetTextField(
                                   message: 'Digite uma senha',
                                   type: 'Password',
                                   obscure: true,
