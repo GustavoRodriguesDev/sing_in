@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class WidgetTextField extends StatelessWidget {
   final String type;
-  bool obscure;
+  final bool obscure;
   final String message;
-  String? validator;
-  WidgetTextField({
+  final String? validator;
+  const WidgetTextField({
     this.obscure = false,
     this.validator = '',
     required this.message,
