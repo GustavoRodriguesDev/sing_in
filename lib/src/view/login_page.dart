@@ -71,6 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                             WidgetTextField(
                               message: 'Digite sua senha',
                               type: 'Password',
+                              obscure: true,
                             ),
                             const SizedBox(height: 20),
                             Row(

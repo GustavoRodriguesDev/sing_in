@@ -74,6 +74,7 @@ class _SignUpPageState extends State<SignUpPage> {
                             WidgetTextField(
                               message: 'Digite uma senha',
                               type: 'Password',
+                              obscure: true,
                             ),
                             const SizedBox(height: 20),
                             Row(
