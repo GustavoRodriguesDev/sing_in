@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:sing_in/src/routes/routes.dart';
 import 'package:sing_in/src/view/components/logo.dart';
 import 'package:sing_in/src/view/components/singin_widget.dart';
-import 'package:sing_in/src/view/components/singup_widget.dart';
+
 import 'package:sing_in/src/view/components/text_checkbox_register.dart';
-import 'package:sing_in/src/view/login_page.dart';
+
 import 'components/botton_circle.dart';
 import 'components/check_box_widget.dart';
 import 'components/textfild_widget.dart';
@@ -31,7 +31,7 @@ class _SignUpPageState extends State<SignUpPage> {
           color: const Color(0xFF1E1E1E),
           child: Stack(
             children: [
-              LogoFtean(),
+              const LogoFtean(),
               const SizedBox(
                 height: 40,
               ),
@@ -89,7 +89,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                         check: check,
                                       ),
                                     ),
-                                    TextCheckBox(),
+                                    const TextCheckBox(),
                                   ],
                                 ),
                               ],
@@ -115,7 +115,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                     const SizedBox(height: 35),
                                     SingIn(
                                       navigation: () {
-                                        Navigator.of(context).pushNamed(LOGIN);
+                                        Navigator.of(context).pushNamed(login);
                                       },
                                       fontSize: 12,
                                       bold: FontWeight.normal,
@@ -127,7 +127,7 @@ class _SignUpPageState extends State<SignUpPage> {
                                   navigation: () {
                                     if (_formkey.currentState!.validate() &&
                                         check == true) {
-                                      Navigator.of(context).pushNamed(LOGIN);
+                                      Navigator.of(context).pushNamed(login);
                                     }
                                   },
                                 ),

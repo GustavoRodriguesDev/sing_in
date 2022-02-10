@@ -1,3 +1,3 @@
-const LOGIN = '/';
-const REGISTER = '/register';
-const NEXT = '/next';
+const login = '/';
+const register = '/register';
+const next = '/next';

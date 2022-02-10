@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:sing_in/src/routes/routes.dart';
 
 class SingIn extends StatelessWidget {
   final double fontSize;
   final TextDecoration underline;
   final FontWeight bold;
-  final navigation;
+  final Function() navigation;
   const SingIn(
       {required this.navigation,
       required this.underline,

@@ -4,7 +4,7 @@ import 'package:sing_in/src/routes/routes.dart';
 import 'package:sing_in/src/view/components/botton_circle.dart';
 import 'package:sing_in/src/view/components/check_box_widget.dart';
 import 'package:sing_in/src/view/components/logo.dart';
-import 'package:sing_in/src/view/components/singin_widget.dart';
+
 import 'package:sing_in/src/view/components/singup_widget.dart';
 import 'package:sing_in/src/view/components/textfild_widget.dart';
 
@@ -63,12 +63,12 @@ class _LoginPageState extends State<LoginPage> {
                             key: _formkey,
                             child: Column(
                               children: [
-                                WidgetTextField(
+                                const WidgetTextField(
                                   validator: '@',
                                   type: 'E-mail',
                                   message: 'Digite um e-mail valido',
                                 ),
-                                WidgetTextField(
+                                const WidgetTextField(
                                   message: 'Digite sua senha',
                                   type: 'Password',
                                   obscure: true,
@@ -135,7 +135,7 @@ class _LoginPageState extends State<LoginPage> {
                                 BottonCircle(
                                   navigation: () {
                                     if (_formkey.currentState!.validate()) {
-                                      Navigator.of(context).pushNamed(NEXT);
+                                      Navigator.of(context).pushNamed(next);
                                     }
                                   },
                                 ),

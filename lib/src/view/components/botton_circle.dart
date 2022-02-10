@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class BottonCircle extends StatelessWidget {
-  final navigation;
+  final Function() navigation;
   const BottonCircle({required this.navigation, Key? key}) : super(key: key);
 
   @override

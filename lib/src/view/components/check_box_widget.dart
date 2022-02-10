@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class WidgetCheckBox extends StatefulWidget {
-  bool check;
-  WidgetCheckBox({required this.check, Key? key}) : super(key: key);
+  final bool check;
+  const WidgetCheckBox({required this.check, Key? key}) : super(key: key);
 
   @override
   State<WidgetCheckBox> createState() => _WidgetCheckBoxState();
@@ -30,7 +30,7 @@ class _WidgetCheckBoxState extends State<WidgetCheckBox> {
               color: Color(0xFFEAEAEA),
             ),
             child: AnimatedContainer(
-              duration: Duration(milliseconds: 150),
+              duration: const Duration(milliseconds: 150),
               height: 11,
               width: 11,
               decoration: BoxDecoration(
