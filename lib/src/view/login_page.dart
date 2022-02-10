@@ -107,7 +107,6 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           SizedBox(
                             height: 130,
-                            width: width,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               crossAxisAlignment: CrossAxisAlignment.center,
@@ -122,9 +121,7 @@ class _LoginPageState extends State<LoginPage> {
                                           fontSize: 20,
                                           fontWeight: FontWeight.bold),
                                     ),
-                                    SizedBox(
-                                      height: 35,
-                                    ),
+                                    SizedBox(height: 35),
                                     SignUp(
                                       fontSize: 12,
                                       bold: FontWeight.normal,
