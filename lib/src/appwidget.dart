@@ -17,9 +17,9 @@ class _AppWidgetState extends State<AppWidget> {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
-        LOGIN: (context) => const LoginPage(),
-        REGISTER: (context) => const SignUpPage(),
-        NEXT: (context) => const NextPage()
+        login: (context) => const LoginPage(),
+        register: (context) => const SignUpPage(),
+        next: (context) => const NextPage()
       },
     );
   }
